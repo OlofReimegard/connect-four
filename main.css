@@ -1,0 +1,138 @@
+html {
+    background: linear-gradient(to right, rgba(0,0,0,0.1) 0%,rgba(0,0,0,0) 12%,rgba(0,0,0,0) 51%,rgba(0,0,0,0) 52%,rgba(0,0,0,0) 87%,rgba(0,0,0,0.09) 99%,rgba(0,0,0,0.1) 80%);
+
+}
+
+body {
+    height: 100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color .7s;
+
+}
+body.blue-background {
+    background-color: rgba(108, 192, 229,.5);
+
+}
+
+body.red-background {
+    background-color: rgba(251, 79, 79,.5);
+
+}
+
+
+
+#playingfield {
+    position: relative;
+    z-index: 1;
+    display:grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    width: 700px;
+    height:600px;
+}
+
+.square {
+    position: relative;
+    background:url(images/square.png);
+    background-size:contain;
+    z-index:99;
+
+
+}
+
+.blue {
+    position: relative;
+    background-color: rgba(0,0,255,0);
+    height:90%;
+    width:90%;
+    margin: 5% 0 0 5%;
+    z-index: 1;
+    border-radius:50%;
+
+}
+.red {
+    position: relative;
+    background-color: rgba(255,0,0,0);
+    height:90%;
+    width:90%;
+    margin: 5% 0 0 5%;
+    z-index: 1;
+    border-radius:50%;
+
+}
+
+.red.redcolor{
+    background: #FB4F4F;
+}
+
+.blue.bluecolor{
+    background: #6CC0E5;
+}
+
+.temp.redcolor{
+    background: #FB4F4F;
+}
+
+.temp.bluecolor{
+    background: #6CC0E5;
+}
+
+.temp {
+    position: absolute;
+    transition: transform .7s;
+    transform: translate(-50%,-100vh);
+    height:90px;
+    width:90px;
+    margin: 50px 0 0 50px;
+    z-index: 1;
+    border-radius:50%;
+}
+
+.winner {
+    width: 700px;
+    height: 600px;
+    position: absolute;
+    background-color: white;
+    z-index: 100;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.winner h1 {
+    font-size: 5em;
+    font-family: sans-serif;
+    font-weight: bolder;
+    letter-spacing: .1em;
+    text-align: center;
+}
+
+.winner h2 {
+    font-size: 2em;
+    font-family: sans-serif;
+    font-weight: bolder;
+    padding: .5em;
+    letter-spacing: .05em;
+    text-align: center;
+    cursor: pointer;
+}
+
+.winner.redcolor h1{
+    color:#FB4F4F;
+}
+.winner.redcolor  h2 {
+    color:#FB4F4F;
+    border: 3px solid #FB4F4F;
+}
+
+.winner.bluecolor h1{
+    color:#6CC0E5;
+}
+.winner.bluecolor  h2 {
+    color:#6CC0E5;
+    border: 3px solid #6CC0E5;
+}
